@@ -1,0 +1,482 @@
+name: Foundation For Sites
+slug: foundation-for-sites
+type: plugin
+version: 0.1.0
+description: Loads the Foundation for sites Framework assets for any plugin/theme that needs it
+icon: plug
+author:
+  name: Dan Serban
+  email: it@cadolino.ro
+homepage: https://github.com/Bibi40k/grav-plugin-foundation-for-sites
+keywords: grav, foundation, css, plugin, framework
+bugs: https://github.com/Bibi40k/grav-plugin-foundation-for-sites/issues
+docs: https://github.com/Bibi40k/grav-plugin-foundation-for-sites/blob/develop/README.md
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.6.0' }
+
+form:
+  validation: loose
+
+  fields:
+    admin_tabs:
+      type: tabs
+      
+      fields:
+        config_tab:
+          type: tab
+          title: Configuration
+
+          fields:
+            General:
+              type: section
+              title: General
+              underline: false
+
+            enabled:
+              type: toggle
+              label: PLUGIN_ADMIN.PLUGIN_STATUS
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            
+            version:
+              type: select
+              size: medium
+              label: PLUGIN_FOUNDATION_FOR_SITES.VERSION
+              default: 'v6.6'
+              options:
+                v6.6: 'Foundation v6.6.3'
+                v6.5: 'Foundation v6.5.3'
+
+            always_load:
+              type: toggle
+              label: PLUGIN_FOUNDATION_FOR_SITES.ALWAYS_LOAD
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+              help: PLUGIN_FOUNDATION_FOR_SITES.ALWAYS_LOAD_HELP
+
+            use_cdn:
+              type: toggle
+              label: PLUGIN_FOUNDATION_FOR_SITES.USE_CDN
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+              help: PLUGIN_FOUNDATION_FOR_SITES.USE_CDN_HELP
+
+            mode:
+              type: select
+              size: small
+              label: PLUGIN_FOUNDATION_FOR_SITES.MODE
+              default: 'production'
+              options:
+                development: Development
+                production: Production
+              help: PLUGIN_FOUNDATION_FOR_SITES.MODE_HELP
+
+            one_file_css:
+                type: toggle
+                label: PLUGIN_FOUNDATION_FOR_SITES.ONE_FILE_CSS
+                highlight: 1
+                default: 1
+                options:
+                  1: PLUGIN_ADMIN.ENABLED
+                  0: PLUGIN_ADMIN.DISABLED
+                validate:
+                  type: bool
+                help: PLUGIN_FOUNDATION_FOR_SITES.ONE_FILE_CSS_HELP
+
+            one_file_js:
+                type: toggle
+                label: PLUGIN_FOUNDATION_FOR_SITES.ONE_FILE_JS
+                highlight: 1
+                default: 1
+                options:
+                  1: PLUGIN_ADMIN.ENABLED
+                  0: PLUGIN_ADMIN.DISABLED
+                validate:
+                  type: bool
+                help: PLUGIN_FOUNDATION_FOR_SITES.ONE_FILE_JS_HELP
+
+        css_tab:
+          type: tab
+          title: CSS
+
+          fields:
+            features:
+              type: section
+              title: Foundation Features
+              underline: true
+
+            foundation_float_css:
+              type: toggle
+              label: float
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_prototype_css:
+              type: toggle
+              label: prototype
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_rtl_css:
+              type: toggle
+              label: rtl
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            
+        
+        javascript_tab:
+          type: tab
+          title: Javascript
+
+          fields:
+            js_files_title:
+              type: section
+              title: Foundation Javascript
+              underline: true
+
+            foundation_abide_js:
+              type: toggle
+              label: abide
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_accordion_js:
+              type: toggle
+              label: accordion
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_accordionMenu_js:
+              type: toggle
+              label: accordionMenu
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_core_js:
+              type: toggle
+              label: core
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_drilldown_js:
+              type: toggle
+              label: drilldown
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_dropdown_js:
+              type: toggle
+              label: dropdown
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_dropdownMenu_js:
+              type: toggle
+              label: dropdownMenu
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_equalizer_js:
+              type: toggle
+              label: equalizer
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_interchange_js:
+              type: toggle
+              label: interchange
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_magellan_js:
+              type: toggle
+              label: magellan
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_offcanvas_js:
+              type: toggle
+              label: offcanvas
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_orbit_js:
+              type: toggle
+              label: orbit
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_responsiveAccordionTabs_js:
+              type: toggle
+              label: responsiveAccordionTabs
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_responsiveMenu_js:
+              type: toggle
+              label: responsiveMenu
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_responsiveToggle_js:
+              type: toggle
+              label: responsiveToggle
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_reveal_js:
+              type: toggle
+              label: reveal
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_slider_js:
+              type: toggle
+              label: slider
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_smoothScroll_js:
+              type: toggle
+              label: smoothScroll
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_sticky_js:
+              type: toggle
+              label: sticky
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_tabs_js:
+              type: toggle
+              label: tabs
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_toggler_js:
+              type: toggle
+              label: toggler
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_tooltip_js:
+              type: toggle
+              label: tooltip
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+
+            js_utilities_title:
+              type: section
+              title: Foundation Javascript Utilities
+              underline: true
+
+            foundation_util_box_js:
+              type: toggle
+              label: util box
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_util_imageLoader_js:
+              type: toggle
+              label: util imageLoader
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_util_keyboard_js:
+              type: toggle
+              label: util keyboard
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_util_mediaQuery_js:
+              type: toggle
+              label: util mediaQuery
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_util_motion_js:
+              type: toggle
+              label: util motion
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_util_nest_js:
+              type: toggle
+              label: util nest
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_util_timer_js:
+              type: toggle
+              label: util timer
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_util_touch_js:
+              type: toggle
+              label: util touch
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            foundation_util_triggers_js:
+              type: toggle
+              label: util triggers
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool

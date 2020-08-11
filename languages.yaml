@@ -1,0 +1,14 @@
+en:
+  PLUGIN_FOUNDATION_FOR_SITES:
+    VERSION: 'Foundation version'
+    STATUS: 'Plugin status'
+    ALWAYS_LOAD: 'Always load (?)'
+    ALWAYS_LOAD_HELP: 'If set to `false` the Theme must have `public $load_foundation-for-sites_plugin = true;` to add the CSS/JS'
+    USE_CDN: 'Use Foundation CDN (?)'
+    USE_CDN_HELP: "If set to `true` Foundation's CSS and JavaScript loads from CDN"
+    MODE: 'Mode (?)'
+    MODE_HELP: 'Production mode will use the `.min` compressed CSS and JS files'
+    ONE_FILE_CSS: 'All CSS (?)'
+    ONE_FILE_CSS_HELP: 'If set to `true` the CSS tab selections will be ignored'
+    ONE_FILE_JS: 'All JS (?)'
+    ONE_FILE_JS_HELP: 'If set to `true` the Javascript tab selections will be ignored'
